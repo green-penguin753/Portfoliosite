@@ -17,3 +17,22 @@ hoverBorders.forEach((hoverBorder) => {
     hoverBorder.classList.remove("hovered");
   });
 });
+
+
+const skillDetailsList = document.querySelectorAll(".skill-details-container");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+
+  { threshold: 0.5 }
+);
+
+skillDetailsList.forEach((container) => observer.observe(container));
