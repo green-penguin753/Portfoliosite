@@ -18,9 +18,7 @@ hoverBorders.forEach((hoverBorder) => {
   });
 });
 
-
 const skillDetailsList = document.querySelectorAll(".skill-details-container");
-
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -31,7 +29,6 @@ const observer = new IntersectionObserver(
       }
     });
   },
-
   { threshold: 0.5 }
 );
 
